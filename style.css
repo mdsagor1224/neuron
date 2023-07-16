@@ -638,6 +638,7 @@ ul.cart-list>li.total>a.btn:hover {
 	float: left;
 	margin-right: 25px;
 	padding-left: 5px;
+	max-width: 62px;
 }
 .services-tiem h3,.services-tiem p{
 	margin-left: 92px;

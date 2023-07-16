@@ -87,5 +87,31 @@ function neuron_theme_custom_post(){
             )
 
         );
+
+        register_post_type( 'feature',
+        array(
+            'labels' => array(
+                'name' => __('Features'),
+                'singular_name' => __('Feature')
+            ),
+            'supports' => array('title','editor','thumbnail', 'page-attributes'),
+            'public' => false,
+            'show_ui' => true
+            )
+
+        );
+
+        register_post_type( 'service',
+        array(
+            'labels' => array(
+                'name' => __('Services'),
+                'singular_name' => __('Service')
+            ),
+            'supports' => array('title','editor', 'custom-fields', 'thumbnail', 'page-attributes'),
+            'public' => false,
+            'show_ui' => true
+            )
+
+        );
 }
 add_action('init','neuron_theme_custom_post');
