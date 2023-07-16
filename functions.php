@@ -115,3 +115,33 @@ function neuron_theme_custom_post(){
         );
 }
 add_action('init','neuron_theme_custom_post');
+
+
+// widget support
+
+function neuron_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer one', 'neuron' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Add footer one widgets here.', 'neuron' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
+    register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer two', 'neuron' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Add footer two widgets here.', 'neuron' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+}
+add_action( 'widgets_init', 'neuron_widgets_init' );
