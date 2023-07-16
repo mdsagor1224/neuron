@@ -4,12 +4,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Neuron Finance is a finance, corporate and business HTML template">
-        <meta name="keywords" content="advisor, corporate accountant, finance, financial, insurance, investment, consultation">
-        <meta name="author" content="trendytheme.net">
-
-		<title>Neuron Finance</title>
-
+       
+	
         <?php wp_head();?>
 
 
@@ -108,27 +104,15 @@
 
 	                <!-- Collect the nav links, forms, and other content for toggling -->
 	                <div class="collapse navbar-collapse" id="navbar-menu">
-	                    <ul class="nav navbar-nav navbar-right" data-in="" data-out="">
-	                        <li class="active"><a href="index.html">Home</a></li>
-	                        <li><a href="about.html">About Us</a></li>
-	                        <li><a href="services.html">Services</a></li>
-	                        <li class="dropdown">
-	                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Works</a>
-	                            <ul class="dropdown-menu">
-	                                <li><a href="portfolio.html">Work Showcase</a></li>
-	                                <li><a href="portfolio-details.html">Work Details</a></li>
-	                            </ul>
-	                        </li>
-	                        <li class="dropdown">
-	                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Press &amp; News</a>
-	                            <ul class="dropdown-menu">
-	                                <li><a href="blog.html">News Standard</a></li>
-	                                <li><a href="blog-details.html">News Details</a></li>
-	                                <li><a href="typography.html">Typography</a></li>
-	                            </ul>
-	                        </li>
-	                        <li><a href="contact.html">Contact</a></li>
-	                    </ul>
+	                    <?php
+						$args = array(
+							'theme_location' => 'menu-1',
+							'menu_class' => 'nav navbar-nav navbar-right',
+						);
+						wp_nav_menu($args);
+						?>
+					
+				
 	                </div><!-- /.navbar-collapse -->
 	            </div>
 	        </nav>

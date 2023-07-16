@@ -20,3 +20,56 @@ function neuron_theme_files(){
 
 }
 add_action('wp_enqueue_scripts','neuron_theme_files');
+
+
+function neuron_theme_supports(){
+
+    // loading textdomain
+    load_theme_textdomain( 'neuron-rrfonlie', get_template_directory() . '/languages' );
+
+    //Generate automatic feed links on head
+    add_theme_support( 'automatic-feed-links' );
+
+    //Adding title tag
+    add_theme_support( 'title-tag' );
+
+    //Enableing Post Thumbnail
+    add_theme_support( 'post-thumbnails' );
+
+    // This theme uses wp_nav_menu() in one location.
+	register_nav_menus(
+		array(
+			'menu-1' => esc_html__( 'Primary', 'neuron-rrfonlie' ),
+		)
+	);
+
+    add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'style',
+			'script',
+		)
+	);
+
+    // Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+    // Add Custiom Logo Support
+    add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 250,
+			'width'       => 250,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
+
+
+}
+add_action('after_setup_theme','neuron_theme_supports');
